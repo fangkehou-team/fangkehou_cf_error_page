@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>质询 | 放课后的下午茶时间</title>
+    <meta name="ViewPort" content="initial-scale=1, minimum-scale=1, width=device-width">
+    <meta charset="utf-8">
+    <style>
+        body, html {
+            cursor: default;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+            font-size: 20px;
+            height: 100%;
+            width: 100%
+        }
+
+        body, div, h2, html, p {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: #27282c;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none
+        }
+
+        .container {
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            position: absolute;
+            right: 0;
+            top: 0
+        }
+
+        .container, .main {
+            display: flex;
+            flex-direction: column
+        }
+
+        .main {
+            -webkit-box-align: center;
+            height: 100%;
+            justify-content: center;
+            padding: 0 20px
+        }
+
+        .box, .main {
+            align-items: center
+        }
+
+        .box {
+            background: #acacac;
+            border-radius: 2px;
+            display: flex;
+            margin: 6px 10px;
+            max-width: 480px;
+            padding: 16px 24px;
+            width: calc(100% - 40px)
+        }
+
+        .icon {
+            float: left;
+            height: auto;
+            margin-top: 4px;
+            width: 40px
+        }
+
+        .icon svg {
+            color: #5642d4
+        }
+
+        .code {
+            border-right: 1.4px solid #cdcdcd;
+            font-size: 20px;
+            font-weight: 600;
+            margin-left: 12px;
+            padding-right: 12px
+        }
+
+        .msg {
+            font-size: 15px;
+            padding-left: 12px
+        }
+
+        .text {
+            font-size: 14px
+        }
+
+        .info {
+            color: #555;
+            font-size: 12px;
+            margin-top: 9px;
+            text-align: center
+        }
+
+
+        .info.l {
+            display: none
+        }
+
+        .version {
+            bottom: 32px;
+            color: #444;
+            font-size: 15px;
+            line-height: 20px;
+            position: absolute;
+            text-align: center
+        }
+
+        .dot:after {
+            content: " • "
+        }
+
+        a {
+            color: #0075ff;
+            text-decoration: none
+        }
+
+        .intro {
+            font-size: 15px;
+            line-height: 1.5
+        }
+
+        form {
+            display: flex;
+            display: -ms-flexbox;
+            flex-wrap: wrap
+        }
+
+        .form-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #fff;
+            background-image: none;
+            border: .05rem solid #bcc3ce;
+            border-radius: .1rem;
+            color: #3b4351;
+            display: block;
+            font-size: 16px;
+            height: 24px;
+            line-height: 20px;
+            margin-left: 8px;
+            max-width: 100%;
+            outline: none;
+            padding: 5px 8px;
+            position: relative;
+            transition: background .2s, border .2s, box-shadow .2s, color .2s;
+            width: 60px
+        }
+
+        .form-input:focus {
+            border-color: #5755d9;
+            box-shadow: 0 0 0 .1rem rgba(87, 85, 217, .2)
+        }
+
+        .form-input:-ms-input-placeholder {
+            color: #bcc3ce
+        }
+
+        .form-input::-moz-placeholder {
+            color: #bcc3ce
+        }
+
+        .form-input::placeholder {
+            color: #bcc3ce
+        }
+
+        #challenge-form {
+            align-items: center
+        }
+
+        .form-btn, input[type=submit] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #5755d9;
+            border: .05rem solid #4b48d6;
+            border-radius: .1rem;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: .8rem;
+            height: 1.8rem;
+            line-height: 1.2rem;
+            margin-left: 8px;
+            outline: none;
+            padding: .25rem .4rem;
+            text-align: center;
+            text-decoration: none;
+            transition: background .2s, border .2s, box-shadow .2s, color .2s;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            vertical-align: middle;
+            white-space: nowrap
+        }
+
+        @media (min-width: 600px) {
+            .box {
+                margin: 12px 10px;
+                padding: 20px 36px;
+                width: 61.8%
+            }
+
+            .icon {
+                margin-top: 0
+            }
+
+            .code {
+                font-size: 28px;
+                margin-left: 20px;
+                padding-right: 20px
+            }
+
+            .msg {
+                font-size: 16px;
+                padding-left: 20px
+            }
+
+            .version {
+                bottom: 64px;
+                font-size: 14px
+            }
+
+            .info {
+                font-size: 14px;
+                margin-top: 12px
+            }
+
+            .info.s {
+                display: none
+            }
+
+            .info.l {
+                display: block
+            }
+        }</style>
+
+
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <div class="box">
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                    <path d="M943.1 172c-2.4-0.2-245.1-25.3-413.8-147.8-5.1-3.7-11-5.6-17.3-5.6-6.2 0-12.2 1.9-17.3 5.6C326.9 146 83.3 171.8 80.9 172c-15.2 1.4-26.6 14.1-26.6 29.3 0 6.7 0.6 165.8 54.8 344.4 32.1 105.8 76.4 196.4 131.9 269.2 70.3 92.3 158.5 156 262 189.2 2.9 0.9 5.9 1.4 9 1.4s6.1-0.5 8.9-1.4c103.6-33.2 191.7-96.8 262-189.2 55.4-72.7 99.8-163.2 131.9-269.2 54.1-178.6 54.8-337.7 54.8-344.4C969.7 186.1 958.3 173.5 943.1 172zM910.1 227.2l-0.1 1.6c-2.9 58.1-13.4 174.4-51.4 299.9-66.7 220.1-183.1 360.1-346 416.1L512 945l-0.6-0.2C349 888.9 232.7 749.4 165.8 530.1c-39.8-130.5-49.4-254.2-51.8-301.4l-0.1-1.6 1.5-0.2c70.6-10.3 250.5-44.8 395.5-142.4l0.9-0.7 1 0.7C658 182.1 837.9 216.6 908.5 227L910.1 227.2z" p-id="2048" fill="#1296db"></path>
+                    <path d="M641.8 351 467 580.3l-89-76.1c-5.3-4.5-12.1-7-19.1-7-8.6 0-16.8 3.7-22.4 10.3-10.5 12.3-9.1 31 3.3 41.5l112.7 96.4c5.2 4.4 12.4 7 19.6 7 0.9 0 1.8 0 2.7-0.1 8-0.8 15.4-5 20.3-11.4l193.7-254c4.8-6.3 6.8-14 5.7-21.8-1-7.8-5.1-14.7-11.3-19.5C670.1 335.6 651.6 338.1 641.8 351z" p-id="2049" fill="#1296db"></path>
+                </svg>
+            </div>
+            <span class="code" id="t-code">Fangkehou保护机制</span> <span class="msg" id="t-msg">质询阶段</span></div>
+        <div class="box">
+            :IM_UNDER_ATTACK_BOX::
+        </div>
+        <div class="box intro"><p id="t-intro">
+            你给我的证据，一直都是最强的王牌。 —— 成步堂龙《逆转裁判》</p></div>
+        <p class="info l">Ray ID: ::RAY_ID::<span class="dot"></span>Your IP: ::CLIENT_IP::</p>
+        <p class="version"><a href="https://www.fangkehou.eu.org/" target="_blank">Team Fangkehou 放课后的下午茶时间</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
